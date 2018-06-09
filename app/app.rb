@@ -4,6 +4,10 @@ module App
   extend self
 
   ROOT = File.expand_path('..', File.dirname(__FILE__))
+  for dir in ['log', 'cache', 'cache/originals', 'cache/resized']
+    dir = "#{ROOT}/#{dir}"
+    Dir.mkdir(dir) unless Dir.exists?(dir)
+  end
   ICON = File.read('./public/favicon.ico')
   LOG_FILE = './log/%s.log' % ENV['RACK_ENV']
   LOGGER = Logger.new(LOG_FILE, 'weekly')
