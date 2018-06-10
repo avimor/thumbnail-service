@@ -24,7 +24,7 @@ get '/thumbnail' do
 end
 
 get '/' do
-  erb 'Thumnail service is up'
+  erb 'Thumnail service is up in %s mode' % ENV['RACK_ENV']
 end
 
 get '/env' do
