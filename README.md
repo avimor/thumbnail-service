@@ -33,11 +33,19 @@ Make sure [ImageMagick](http://www.imagemagick.org) is installed
 
 Check installation with `rspec`
 
+### Execution
+
+Development: `rerun --no-notify --pattern="*.rb" "puma -p 4000"`
+
+Production: `puma -e production`
+
+See `config/puma.rb` for puma settings
+
 ### Endpoints & API
 
 #### `/thumbnail`
 
-`GET /thumbnail?url=&lt;url&gt;&amp;width=&lt;width&gt;&amp;height=&lt;height&gt;`
+`GET /thumbnail?url=<url>&width=<width>&height=<height>`
 
 The resizing logic is similar to [Cloudinary’s lpad cropping mode](https://cloudinary.com/documentation/image_transformations#lpad_limit_pad):
 The image is scaled down to fill the given width and height while retaining the
@@ -51,11 +59,11 @@ Parameters:
 
 `url` - A url pointing to the origin image, must contain the URI scheme
 
-`width`:Integer - Resized thumbnail width
+`width` - Resized thumbnail width (int)
 
-`height`:Integer - Resized thumbnail height
+`height` - Resized thumbnail height (int)
 
-`size` - In `&lt;width&gt;&amp;x&lt;height&gt;` format instead of `width` & `height` parameters
+`size` - In `<width>x<height>` format instead of `width` & `height` parameters
 
 Optional parameters:
 
