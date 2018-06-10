@@ -1,7 +1,7 @@
-Sinatra/ImageMagic thumbnail service
+Rack thumbnail service
 =====================
 
-Small, simple and fast thumbnail service, written in Ruby
+Small, simple and fast thumbnail service, written in Ruby using ImageMagick, Sinatra & Rack/Puma
 
 ### Installation
 
