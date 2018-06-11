@@ -1,4 +1,4 @@
 cache/
 tmp/
-log/
-.env
+log*
+.*

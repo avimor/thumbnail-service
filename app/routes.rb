@@ -1,5 +1,4 @@
 require 'sinatra'
-
 require_relative 'lib/image'
 
 def resize_image
@@ -24,7 +23,7 @@ get '/thumbnail' do
 end
 
 get '/' do
-  erb 'Thumnail service is up in %s mode' % ENV['RACK_ENV']
+  erb 'Thumnail service version %s is up in %s mode' % [App.version, ENV['RACK_ENV']]
 end
 
 get '/env' do

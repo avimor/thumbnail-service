@@ -1,7 +1,7 @@
 require 'open-uri'
+require 'digest/md5'
 
 module NanoMagick
-
   class Image
     attr_reader :src, :ext, :cache
 
@@ -12,14 +12,14 @@ module NanoMagick
       @cache = "#{App.root}/cache/originals/#{md5(@src)}#{@ext}"
     end
 
-    def md5 data
-      ret = Digest::MD5.hexdigest data
+    def md5(data)
+      ret = Digest::MD5.hexdigest(data)
       ret[2,0] = ''
       ret
     end
 
-    def log text
-      App.log text
+    def log(text)
+      App.log(text)
     end
 
     def download(reload = false)
@@ -50,6 +50,5 @@ module NanoMagick
       log 'Resized %s to %s (%s)' % [@src, resized, size]
       resized
     end
-
   end
 end

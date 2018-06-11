@@ -7,8 +7,8 @@ Bundler.require
 require_relative 'app'
 require_relative 'routes'
 
-# exit unless imagemagic convert is found
-App.die('ImageMagic convert not found in path') if `which convert` == ''
+# exit unless imagemagick convert is found
+App.die('ImageMagick convert not found in path') if `which convert` == ''
 
 # exit uneless unsuported env
 App.die('Unsupported RACK_ENV') unless ['production', 'development'].include?(ENV.fetch('RACK_ENV'))
