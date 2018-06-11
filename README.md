@@ -41,7 +41,7 @@ Production: `puma -e production`
 
 See `config/puma.rb` for puma settings
 
-Heroku: `heroku create`only once & then `git push heroku master`
+Heroku: `heroku create` only once & then `git push heroku master`
 
 ### Endpoints & API
 
